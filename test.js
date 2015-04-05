@@ -13,6 +13,8 @@ function age(year, month, day) {
   results.days = day - today.getDate();
   var monthsDiff = month - today.getMonth();
   results.months = monthsDiff === 0 ? undefined : monthsDiff;
+  var yearsDiff = year - today.getFullYear();
+  results.years = yearsDiff === 0 ? undefined : yearsDiff;
   return results
 }
 
@@ -26,7 +28,7 @@ lab.test('solves first test', function (done) {
 });
 
 
-lab.test('solves first test', function (done) {
+lab.test('solves second test', function (done) {
   var results = age(2015, 3, 7);
   Code.expect(5).to.equal(results.days);
   Code.expect(undefined).to.equal(results.months);
@@ -34,7 +36,7 @@ lab.test('solves first test', function (done) {
   done();
 });
 
-lab.test('solves first test', function (done) {
+lab.test('solves third test', function (done) {
   var results = age(2016, 4, 7);
   Code.expect(5).to.equal(results.days);
   Code.expect(1).to.equal(results.months);
